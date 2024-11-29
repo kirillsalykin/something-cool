@@ -1,0 +1,34 @@
+[package]
+name = "prostor"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "prostor"
+
+[dependencies]
+tokio = { version = "1.40.0", features = ["rt-multi-thread", "macros", "net", "signal", "test-util"] }
+axum = { version = "0.7.7", features = ["json", "macros", "multipart"] }
+tower-http = { version = "0.6.1", features = ["cors", "timeout"] }
+utoipa = { version = "5.1.1", features = ["uuid", "axum_extras", "openapi_extensions"] }
+utoipa-axum = "0.1.1"
+utoipa-swagger-ui = { version = "8.0.1", features = ["axum"] }
+
+serde = { version = "1.0.210", features=["derive"] }
+serde_json = { version = "1.0.132" }
+csv = "1.3.0"
+
+sqlx = { version = "0.8.2", features = ["runtime-tokio", "macros", "postgres", "migrate", "uuid", "chrono" ] }
+
+config = { version = "0.14.0", default-features = false, features = ["yaml"] }
+tempfile = "3.13.0"
+uuid = { version = "1.10.0", features = ["serde", "v7"] }
+jsonwebtoken = { version = "9.3.0", features = []}
+reqwest = { version = "0.12.8", default-features = false, features = ["json", "rustls-tls"]}
+cached = { version = "0.53.1", features = ["proc_macro", "async"]}
+underway = "0.0.5"
+lettre = { version = "0.11.10", default-features = false, features = ["hostname", "builder", "rustls-tls", "smtp-transport", "tokio1-rustls-tls"]}

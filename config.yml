@@ -1,0 +1,11 @@
+app:
+  addr: 0.0.0.0:8000
+database:
+  host: "localhost"
+  port: 5432
+  username: "prostor"
+  password: "prostor"
+  database: "prostor"
+cognito:
+  region: "eu-west-1"
+  user_pool_id: "eu-west-1_qxeM2J8Z5"
